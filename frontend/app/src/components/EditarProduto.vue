@@ -77,12 +77,9 @@ export default defineComponent({
     const id = ref('');
 
     onMounted(() => {
-      // Recupera o ID da rota
       const routeId = router.currentRoute.value.params.id;
       if (routeId) {
-        // Garante que routeId seja tratado como uma string
         id.value = Array.isArray(routeId) ? routeId[0] : routeId;
-        // Restante do código...
       }
     });
 
@@ -94,7 +91,6 @@ export default defineComponent({
 </script>
 
 <style>
-/* styles.css */
 
 body {
 display: flex;
@@ -102,7 +98,7 @@ justify-content: center;
 align-items: center;
 min-height: 100vh;
 margin: 0;
-background-color: #f8f9fa; /* Cor de fundo opcional */
+background-color: #f8f9fa; 
 }
 
 .container {

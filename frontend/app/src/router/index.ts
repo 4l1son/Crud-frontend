@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     component: CadastrarProdutos,
   },
   {
-    path: '/editar/:id',  // Adicionado ':id' como um parâmetro dinâmico na rota de edição
+    path: '/editar/:id',  
     name: 'editar',
     component: EditarProdutos,
   },

@@ -28,7 +28,7 @@ export default defineComponent({
         try {
           await http.delete(`http://127.0.0.1:8000/api/products/${id}`);
           alert('Produto excluído com sucesso!');
-          this.loadAllProducts(); // Recarrega a lista após a exclusão
+          this.loadAllProducts(); 
         } catch (error) {
           console.error('Erro ao excluir o produto:', error);
           alert('Algo deu errado ao excluir o produto.');
@@ -68,8 +68,8 @@ export default defineComponent({
 
           <td>
             <router-link :to="'/editar/' + produto.id">
-    <button>Editar</button>
-  </router-link>
+             <button>Editar</button>
+              </router-link>
             <button @click="deletarProduto(produto.id)">Deletar</button>
           </td>
         </tr>
