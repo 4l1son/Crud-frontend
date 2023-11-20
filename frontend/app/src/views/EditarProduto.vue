@@ -60,13 +60,11 @@ export default defineComponent({
 
       try {
         if (this.id) {
-  await http.put(`http://127.0.0.1:8000/api/products/${this.id}`, productUpdate);
-  alert('Produto editado com sucesso!');
-} else {
-  console.error('ID do produto não está definido.');
-}
-        alert('Produto editado com sucesso!');
-      } catch (error) {
+              await http.put(`http://127.0.0.1:8000/api/products/${this.id}`, productUpdate);
+              alert('Produto editado com sucesso!');
+              }
+       } 
+       catch (error) {
         console.error('Erro ao editar o produto:', error);
         alert('Algo deu errado ao editar o produto.');
       }

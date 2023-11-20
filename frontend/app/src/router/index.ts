@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import CadastrarProdutos from '../components/CadastrarProdutos.vue';
-import EditarProdutos from '../components/EditarProduto.vue';
+import CadastrarProdutos from '../views/CadastrarProdutos.vue';
+import EditarProdutos from '../views/EditarProduto.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
