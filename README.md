@@ -6,6 +6,7 @@
 <div style="display: inline_block">
   <li>Vue.js</li>
   <li>Axios</li>
+ <li>Bootsrap</li>
 </div>
 
 
