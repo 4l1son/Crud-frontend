@@ -1,6 +1,6 @@
 <h1  >Crud Laravel - Cadastro de produtos</h1>
  <hr>
-<p align="left">O projeto se baseia em um crud que consome uma api para cadastro de produtos. A api se encontra no seguinte repositório: https://github.com/4l1son/api-mktp/ </p>
+<p align="left">O projeto se baseia em um crud que consome uma api para cadastro de produtos. A api se encontra no seguinte repositório: https://github.com/4l1son/Crud-laravel-MKTP</p>
 
 <h2>Tecnologias utilizadas</h2>
 <div style="display: inline_block">
