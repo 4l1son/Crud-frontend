@@ -50,7 +50,7 @@ export default defineComponent({
     <table>
       <thead>
         <tr>
-          <th>Id</th>
+          <th>Codigo de identificação</th>
           <th>Nome do produto</th>
           <th>Link da imagem</th>
           <th>Preço</th>

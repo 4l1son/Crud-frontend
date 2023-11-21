@@ -8,7 +8,7 @@
     <hr class="my-4">
     <form @submit.prevent="editProduct">
       <div class="mb-3">
-        <label for="id" class="form-label">Id</label>
+        <label for="id" class="form-label">Codigo de identificação</label>
         <input type="text" class="form-control form-control-sm" v-model="id" id="id">
       </div>
       <div class="mb-3">
