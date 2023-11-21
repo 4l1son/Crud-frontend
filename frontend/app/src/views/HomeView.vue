@@ -68,9 +68,14 @@ export default defineComponent({
 
           <td>
             <router-link :to="'/editar/' + produto.id">
-             <button>Editar</button>
+             <button class="btn btn-link">    
+              <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+            </button>
               </router-link>
-            <button @click="deletarProduto(produto.id)">Deletar</button>
+              <button class="btn btn-link"
+                @click="deletarProduto(produto.id)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
           </td>
         </tr>
       </tbody>
