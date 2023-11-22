@@ -13,7 +13,7 @@
 <h2>Como usar</h2>
 <div style="display: inline_block">
   <li>Inciar a API</li>
-  <li>Iniciar o front (npm run serve)</li>
+  <li>Iniciar o front (npm run serve) - npm install caso for a primeira vez rodando o projeto</li>
 
 
 <h2>Demonstração da aplicação</h2>
