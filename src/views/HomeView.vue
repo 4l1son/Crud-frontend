@@ -18,7 +18,7 @@
         <tr v-for="produto in produtos" :key="produto.id">
           <td>{{ produto.id }}</td>
           <td>{{ produto.name }}</td>
-          <td><img :src="produto.LinkImagem" alt="Imagem do Produto" class="product-image"></td>
+          <td>{{ produto.LinkImagem }}</td>
           <td>{{ produto.Preco }}</td>
           <td>{{ produto.CEP }}</td>
           <td>

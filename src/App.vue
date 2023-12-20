@@ -1,8 +1,8 @@
 <template>
   <div>
     <nav>
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/cadastrar" class="nav-link">Cadastrar</router-link>
+      <router-link to="/" class="nav-link"><i class="fas fa-home"></i>Home</router-link>
+      <router-link to="/cadastrar" class="nav-link"><i class="fas fa-user-plus"></i>Cadastrar</router-link>
       <!-- Adicione mais links conforme necessário -->
     </nav>
     <router-view />
