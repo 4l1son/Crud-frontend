@@ -1,5 +1,3 @@
-// router.ts
-
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '@/views/HomeView.vue'
 import CadastrarProdutos from '@/views/CadastrarProdutos.vue'

@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-1">
-    <router-link :to="'/'"></router-link>
+    <router-link to="/"></router-link>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Editar Produto</h3>
@@ -38,9 +38,14 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import http from '@/services/http';
 import { useRouter } from 'vue-router';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 export default defineComponent({
   name: 'EditarProduto',
+  components: {
+    VueSweetalert2,
+  },
   data() {
     return {
       id: '',
@@ -63,11 +68,21 @@ export default defineComponent({
       try {
         if (this.id) {
           await http.put(`http://127.0.0.1:8000/api/products/${this.id}`, productUpdate);
-          alert('Produto editado com sucesso!');
+          (this as any).$swal({
+            title: 'Sucesso!',
+            text: 'Produto editado com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
         }
       } catch (error) {
         console.error('Erro ao editar o produto:', error);
-        alert('Algo deu errado ao editar o produto.');
+        (this as any).$swal({
+          title: 'Erro!',
+          text: 'Algo deu errado ao editar o produto.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
       }
     },
   },
@@ -111,6 +126,7 @@ export default defineComponent({
   },
 });
 </script>
+
 <style scoped>
 .container {
   max-width: 600px;

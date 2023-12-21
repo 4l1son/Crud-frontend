@@ -103,26 +103,32 @@
   border-color: #bee5eb;
 }
 </style>
-
 <script lang="ts">
 import { defineComponent } from 'vue';
 import http from '@/services/http';
 import { useRouter } from 'vue-router';
+import { defineAsyncComponent } from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 export default defineComponent({
   name: 'CadastrarProdutos',
+  components: {
+    VueSweetalert2: defineAsyncComponent(() => import('vue-sweetalert2')),
+  },
   data() {
     return {
-      id: "",
-      name: "",
-      LinkImagem: "",
-      Preco: "",
-      CEP: "",
-      cepShowData: ""
+      id: '',
+      name: '',
+      LinkImagem: '',
+      Preco: '',
+      CEP: '',
+      cepShowData: '',
     };
   },
   methods: {
-    cadProduct() {
+    async cadProduct() {
       const productCreate = {
         id: this.id,
         name: this.name,
@@ -131,14 +137,22 @@ export default defineComponent({
         CEP: this.CEP,
       };
 
-      http
-        .post("http://127.0.0.1:8000/api/products", productCreate)
-        .then(() => {
-          alert("Produto salvo com sucesso!!!");
-        })
-        .catch(() => {
-          alert("Algo deu errado. Tente novamente mais tarde.");
+      try {
+        await http.post('http://127.0.0.1:8000/api/products', productCreate);
+        (this as any).$swal({
+          title: 'Sucesso!',
+          text: 'Produto salvo com sucesso!',
+          icon: 'success',
+          confirmButtonText: 'OK',
         });
+      } catch (error) {
+        (this as any).$swal({
+          title: 'Erro!',
+          text: 'Algo deu errado. Tente novamente mais tarde.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      }
     },
     getapiViacep() {
       if (this.CEP.length === 8) {
@@ -147,11 +161,10 @@ export default defineComponent({
             this.cepShowData = `Cidade: ${response.data.localidade}, Estado: ${response.data.uf}, Bairro ${response.data.bairro} `;
           })
           .catch(() => {
-            this.cepShowData = "Erro ao obter dados do CEP.";
+            this.cepShowData = 'Erro ao obter dados do CEP.';
           });
       }
     },
   },
 });
 </script>
-
